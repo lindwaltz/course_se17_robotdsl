@@ -1,15 +1,19 @@
+IDE Installation
+================
+
 IntelliJ
-========
+--------
+
 - Download
 - Configure |> Plugins |> Manage Repositories |> Add
   `http://download.eclipse.org/modeling/tmf/xtext/idea/2.9.2/updatePlugins.xml`
 - Tick all checkboxes (three) and update
 
 Eclipse Development
-===================
+-------------------
+**WARNING!** Eclipse is an odd animal. Don't use it unless you are already used to it. Go with IntelliJ if you can, it functions like most other IDEs out there - so whatever you learn or already known will be a lot more available for reuse.
 
-Installing
-----------
+#### Installing
 
 ### Eclipse
 * Download Eclipse Neon (64-bit) from https://www.eclipse.org/downloads/
