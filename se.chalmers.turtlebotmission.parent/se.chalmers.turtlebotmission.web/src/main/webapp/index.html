@@ -1,29 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="Content-Language" content="en-us">
-	<title>Example Web Editor</title>
-	<link rel="stylesheet" type="text/css" href="xtext/2.11.0/xtext-ace.css"/>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<title>Turtlebot Mission Editor</title>
+	<link rel="stylesheet" type="text/css" href="orion/code_edit/built-codeEdit.css" />
+	<link rel="stylesheet" type="text/css" href="xtext/2.11.0/xtext-orion.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
 	<script src="webjars/requirejs/2.3.2/require.min.js"></script>
 	<script type="text/javascript">
-		var baseUrl = window.location.pathname;
-		var fileIndex = baseUrl.indexOf("index.html");
-		if (fileIndex > 0)
-			baseUrl = baseUrl.slice(0, fileIndex);
+		var baseUrl = '/';		
+		
 		require.config({
 			baseUrl: baseUrl,
 			paths: {
-				"jquery": "webjars/jquery/2.2.4/jquery.min",
-				"ace/ext/language_tools": "webjars/ace/1.2.3/src/ext-language_tools",
-				"xtext/xtext-ace": "xtext/2.11.0/xtext-ace"
+				'text': 'webjars/requirejs-text/2.0.15/text',
+				'jquery': 'webjars/jquery/2.2.4/jquery.min',
+				'xtext/xtext-orion': 'xtext/2.11.0/xtext-orion'
 			}
 		});
-		require(["webjars/ace/1.2.3/src/ace"], function() {
-			require(["xtext/xtext-ace"], function(xtext) {
-				xtext.createEditor({
-					baseUrl: baseUrl,
-					syntaxDefinition: "xtext-resources/generated/mode-tbm"
+		require(["orion/code_edit/built-codeEdit-amd"], function() {
+			require(['xtext/xtext-orion'], function(xtext) {
+				xtext.createEditor({syntaxDefinition: "xtext-resources/generated/orion-missiondsl"}).done(function(editorViewer) {
+					var xtextServices = editorViewer.xtextServices;
+					$('#save-button').click(function() {
+						xtextServices.saveResource();
+					});
+					$('#revert-button').click(function() {
+						xtextServices.revertResource();
+					});
+					xtextServices.successListeners.push(function(serviceType, result) {
+						if (serviceType == 'validate' && result.issues.every(function(issue) {issue.severity != 'error'})) {							
+							// call generate
+							xtextServices.generate({artifactId: '/DEFAULT_ARTIFACT'}).done(function(result) {
+                $('#generator-result').html('<pre>' + result + '</pre>');
+							});
+						}
+					});
 				});
 			});
 		});
@@ -32,12 +45,20 @@
 <body>
 
 <div class="container">
-	<div class="header">
-		<h1>Example MissionDsl Web Editor</h1>
+	<div class="xtext-editor"
+		data-editor-resource-id="static.tbm"
+		data-editor-dirty-element="dirty-indicator"
+		data-editor-enable-save-action="true"
+		data-editor-enable-formatting-action="true"
+		data-editor-show-error-dialogs="false"></div>
+	<div class="status-wrapper">
+		<button id="save-button">Save</button>
+		<button id="revert-button">Revert</button>
+		<div id="dirty-indicator">modified</div>
+		<div id="status">At your command</div>
 	</div>
-	<div class="content">
-		<div id="xtext-editor" data-editor-xtext-lang="tbm"></div>
-	</div>
+</div>
+<div id="generator-result">
 </div>
 
 </body>

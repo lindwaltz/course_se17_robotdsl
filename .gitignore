@@ -38,6 +38,7 @@ target/
 *.smap
 buildroot
 build/
+out/
 
 ## Editor ignores
 *~

@@ -8,16 +8,47 @@ dependencies {
 	compile "org.eclipse.xtext:org.eclipse.xtext.web.servlet:${xtextVersion}"
 	compile "org.eclipse.xtend:org.eclipse.xtend.lib:${xtextVersion}"
 	compile "org.webjars:requirejs:2.3.2"
+        compile "org.webjars:requirejs-text:2.0.15"
 	compile "org.webjars:jquery:2.2.4"
 	compile "org.webjars:ace:1.2.3"
 	providedCompile "org.eclipse.jetty:jetty-annotations:9.3.8.v20160314"
 	providedCompile "org.slf4j:slf4j-simple:1.7.21"
 }
+
+/* 
+ * The following download/unpack tasks are currently necessary 
+ * because Eclipse Orion does not provide easily consumable artifacts
+ */
+
+def orionDir = file('src/main/webapp/orion')
+def orionZip = file("$buildDir/orion/built-codeEdit.zip")
+def orionUrl = 'http://download.eclipse.org/orion/drops/R-12.0-201606220105/built-codeEdit.zip'
+
+task downloadOrion {
+	onlyIf {!orionZip.exists()}
+	doLast {
+		orionZip.parentFile.mkdirs()
+		println "Download $orionUrl"
+		ant.get(src: orionUrl, dest: orionZip)
+	}
+}
+
+task unpackOrion(type: Copy) {
+	onlyIf {!orionDir.exists()}
+	dependsOn(downloadOrion)
+	from(zipTree(orionZip))
+	into(orionDir)
+}
+
 task jettyRun(type:JavaExec) {
-	dependsOn(sourceSets.main.runtimeClasspath)
+	dependsOn(sourceSets.main.runtimeClasspath, unpackOrion)
 	classpath = sourceSets.main.runtimeClasspath.filter{it.exists()}
 	main = 'se.chalmers.turtlebotmission.web.ServerLauncher'
 	standardInput = System.in
 	group = 'run'
 	description = 'Starts an example Jetty server with your language'
 }
+
+tasks.eclipse.dependsOn(unpackOrion)
+
+uploadArchives.enabled = false

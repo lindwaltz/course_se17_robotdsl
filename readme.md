@@ -136,6 +136,8 @@ Periphery
 
 - https://www.packtpub.com/books/content/testing-xtext-and-xtend
 
+- https://github.com/eclipse/xtext-web/blob/master/org.eclipse.xtext.web.example.jetty/src/main/webapp/ace-statemachine-resource.html
+
 Unused
 ------
 - https://www.eclipsecon.org/france2015/sites/default/files/slides/presentation.pdf
