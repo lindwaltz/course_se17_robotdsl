@@ -3,6 +3,11 @@
  */
 package se.chalmers.turtlebotmission.tests
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.stream.Collectors;
+import java.util.List;
 import com.google.inject.Inject
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.XtextRunner
@@ -23,23 +28,35 @@ class MissionDslParsingTest {
     @Inject extension ValidationTestHelper
 
     @Test
-	def void loadModel() {
+	def void simpleEmptyModel() {
 		val result = parseHelper.parse('''
 			TurtleBot test{}
 		''')
-        if (result == null) {
+        if (result === null) {
             System.out.println("ERROR: ParseHelper failed to parse TurtleBot instance. Weird error?!")
         }
-        
 		Assert.assertNotNull(result)
-		result.assertNoErrors
-		/*
+
 		System.out.println(result)
 		val noErrors = result.eResource().getErrors().isEmpty()
 		if (!noErrors) {
 			result.eResource().getErrors().forEach[el,idx | System.out.println(el)]
 		}
 		Assert.assertTrue(noErrors)
-		*/
 	}
+
+    @Test
+    def void basicExample01() {
+        val content = loadFile("basic_example01.tbm")
+        parseHelper.parse(content).assertNoErrors
+    }
+
+    def String loadFile(String path) {
+        val currentDirectory = new File(new File(".").getAbsolutePath());
+
+        val content = String.join("\n",
+            Files.readAllLines(Paths.get(currentDirectory.getAbsolutePath(), "./examples/basic_example01.tbm")))
+
+        return content
+    }
 }
