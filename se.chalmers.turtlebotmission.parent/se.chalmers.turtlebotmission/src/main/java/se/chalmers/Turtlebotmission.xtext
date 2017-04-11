@@ -7,16 +7,12 @@ TurtleBot returns TurtleBot:
 	'TurtleBot'
 	name=EString
 	'{'
-		'bot_start' bot_start=[WayPoint|EString]
-		'area' area=Area
-		'waypointtypes' '{' waypointtypes+=WaypointType ( "," waypointtypes+=WaypointType)* '}' 
-		'waypoints' '{' waypoints+=WayPoint ( "," waypoints+=WayPoint)* '}' 
+		('bot_start' bot_start=[WayPoint|EString])?
+        ('area' area=Area)?
+        ('waypointtypes' '{' waypointtypes+=WaypointType ( "," waypointtypes+=WaypointType)* '}')?
+        ('waypoints' '{' waypoints+=WayPoint ( "," waypoints+=WayPoint)* '}')?
 		('missions' '{' missions+=Mission ( "," missions+=Mission)* '}' )?
 	'}';
-
-
-
-
 
 Task returns Task:
 	LineTask | ShortestPathTask | ReturnToStartTask;
