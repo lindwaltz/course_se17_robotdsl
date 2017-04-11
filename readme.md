@@ -19,7 +19,7 @@ To start an interactive web-based editor, with live generation of output python 
 gradlew jettyRun
 ```
 
-![editor screenshot](/lindwaltz/course_se17_robotdsl/blob/master/examples/editor_preview.png?raw=true)
+![editor screenshot](https://raw.githubusercontent.com/lindwaltz/course_se17_robotdsl/master/examples/editor_preview.png)
 
 IDE Installation
 ================
