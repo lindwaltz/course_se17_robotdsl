@@ -4,6 +4,7 @@ dependencies {
 	testCompile "org.eclipse.xtext:org.eclipse.xtext.xbase.testing:${xtextVersion}"
 	compile "org.eclipse.xtext:org.eclipse.xtext:${xtextVersion}"
 	compile "org.eclipse.xtext:org.eclipse.xtext.xbase:${xtextVersion}"
+	compile "org.apache.velocity:velocity:1.7"
 }
 configurations {
 	mwe2 {

@@ -9,6 +9,10 @@ iframe {
 	background-color: #f0f0f0;
 }
 
+pre {
+  font-size: 10px
+}
+
 a {
 	color: #22a;
 	text-decoration: none;

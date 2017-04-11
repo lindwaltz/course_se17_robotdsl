@@ -39,6 +39,7 @@ target/
 buildroot
 build/
 out/
+velocity.log
 
 ## Editor ignores
 *~

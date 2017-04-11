@@ -10,6 +10,15 @@ import org.eclipse.xtext.generator.IGeneratorContext
 
 import se.chalmers.turtlebotmission.turtlebotmission.TurtleBot
 
+import java.io.StringWriter
+import org.apache.velocity.app.Velocity;
+import org.apache.velocity.Template;
+import org.apache.velocity.VelocityContext;
+import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
+
+import se.chalmers.turtlebotmission.turtlebotmission.*
+import se.chalmers.turtlebotmission.turtlebotmission.ShortestPathTask
+
 /**
  * Generates code from your model files on save.
  * 
@@ -17,10 +26,45 @@ import se.chalmers.turtlebotmission.turtlebotmission.TurtleBot
  */
 class MissionDslGenerator extends AbstractGenerator {
 
-	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+    new() {
+        Velocity.setProperty(Velocity.RESOURCE_LOADER, "classpath");
+        Velocity.setProperty("classpath.resource.loader.class", typeof(ClasspathResourceLoader).getName())
+        Velocity.init();
+    }
+
+    override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		val tbm = resource.allContents.filter(TurtleBot).head
 		if (tbm !== null) {
-			fsa.generateFile('/DEFAULT_ARTIFACT', "hello world")
+            val tmpl = Velocity.getTemplate("templates/mission.py.vm")
+            val tc = new VelocityContext()
+
+            // update context with model information
+            tc.put("tbm", tbm)
+            val missionSteps = newArrayList()
+            for (Mission mission : tbm.missions) {
+                for (Task task : mission.task) {
+                    switch task {
+                        ReturnToStartTask : missionSteps.add("['goto_start']")
+                        ShortestPathTask : {
+                            val points = task.waypoints.map[e | "[" + e.coord_x + "," + e.coord_y + "]"]
+                            val pointStr = String.join(",", points)
+                            missionSteps.add("['goto_opt'," + "[" + pointStr + "]")
+                        }
+                        LineTask : {
+                            val points = task.waypoints.map[e | "[" + e.coord_x + "," + e.coord_y + "]"]
+                            val pointStr = String.join(",", points)
+                            missionSteps.add("['goto_line'," + "[" + pointStr + "]")
+                        }
+                    }
+                }
+            }
+            tc.put("steps", missionSteps)
+
+            // render template and return
+            val writer = new StringWriter()
+            tmpl.merge(tc, writer)
+            writer.flush()
+			fsa.generateFile('/DEFAULT_ARTIFACT', writer.toString())
 		} else {
 			fsa.generateFile('/DEFAULT_ARTIFACT', "not parseable.")
 		}
