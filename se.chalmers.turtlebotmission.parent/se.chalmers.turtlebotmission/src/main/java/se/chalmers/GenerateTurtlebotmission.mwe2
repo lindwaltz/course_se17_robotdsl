@@ -30,7 +30,7 @@ Workflow {
 		}
 		language = StandardLanguage {
 			name = "se.chalmers.turtlebotmission"
-			fileExtensions = "tsm"
+			fileExtensions = "tbm"
 
 			serializer = {
 				generateStub = false

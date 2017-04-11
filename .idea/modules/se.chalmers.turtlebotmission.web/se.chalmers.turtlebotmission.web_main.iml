@@ -6,7 +6,6 @@
         <webroots>
           <root url="file://$MODULE_DIR$/../../../se.chalmers.turtlebotmission.parent/se.chalmers.turtlebotmission.web/src/main/webapp" relative="/" />
         </webroots>
-        <sourceRoots />
       </configuration>
     </facet>
   </component>
@@ -22,7 +21,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="se.chalmers.turtlebotmission_main" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.ow2.asm:asm-tree:5.0.1" level="project" />
     <orderEntry type="module" module-name="se.chalmers.turtlebotmission.ide_main" />
     <orderEntry type="library" name="Gradle: org.eclipse.xtext:org.eclipse.xtext.xbase.web:2.9.2" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.xtext:org.eclipse.xtext.web.servlet:2.9.2" level="project" />
@@ -59,6 +57,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.eclipse.jetty:jetty-jndi:9.2.11.v20150529" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.eclipse.jetty:jetty-xml:9.2.11.v20150529" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.eclipse.jetty:jetty-servlet:9.2.11.v20150529" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.ow2.asm:asm-tree:5.0.1" level="project" />
     <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Gradle: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" name="Gradle: org.sonatype.sisu.inject:cglib:2.2.1-v20090111" level="project" />

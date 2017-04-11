@@ -2,8 +2,72 @@ grammar se.chalmers.turtlebotmission with org.eclipse.xtext.common.Terminals
 
 generate turtlebotmission "http://www.chalmers.se/turtlebotmission"
 
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
+TurtleBot returns TurtleBot:
+	'TurtleBot'
+	name=EString
+	'{'
+		'bot_start' bot_start=[WayPoint|EString]
+		'area' area=Area
+		'waypointtypes' '{' waypointtypes+=WaypointType ( "," waypointtypes+=WaypointType)* '}' 
+		'waypoints' '{' waypoints+=WayPoint ( "," waypoints+=WayPoint)* '}' 
+		('missions' '{' missions+=Mission ( "," missions+=Mission)* '}' )?
+	'}';
+
+
+
+
+
+Task returns Task:
+	LineTask | ShortestPathTask | ReturnToStartTask;
+
+EString returns ecore::EString:
+	STRING | ID;
+
+Area returns Area:
+	{Area}
+	'Area'
+	'{'
+		('xmax' xmax=EInt)?
+		('ymax' ymax=EInt)?
+	'}';
+
+WaypointType returns WaypointType:
+	{WaypointType}
+	'WaypointType'
+	name=EString;
+
+WayPoint returns WayPoint:
+	'WayPoint'
+	name=EString
+	'{'
+		('coord_x' coord_x=EInt)?
+		('coord_y' coord_y=EInt)?
+		'waypointtypes' '(' waypointtypes+=[WaypointType|EString] ( "," waypointtypes+=[WaypointType|EString])* ')' 
+	'}';
+
+Mission returns Mission:
+	'Mission'
+	name=EString
+	'{'
+		'task' '{' task+=Task ( "," task+=Task)* '}' 
+	'}';
+
+EInt returns ecore::EInt:
+	'-'? INT;
+
+LineTask returns LineTask:
+	'LineTask'
+	'{'
+		'waypoints' '(' waypoints+=[WayPoint|EString] ( "," waypoints+=[WayPoint|EString])* ')' 
+	'}';
+
+ShortestPathTask returns ShortestPathTask:
+	'ShortestPathTask'
+	'{'
+		'waypoints' '(' waypoints+=[WayPoint|EString] ( "," waypoints+=[WayPoint|EString])* ')' 
+	'}';
+
+ReturnToStartTask returns ReturnToStartTask:
+	{ReturnToStartTask}
+	'ReturnToStartTask'
+	;
