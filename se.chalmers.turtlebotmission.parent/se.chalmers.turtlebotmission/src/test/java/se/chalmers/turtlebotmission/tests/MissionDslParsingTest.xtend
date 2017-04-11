@@ -6,8 +6,6 @@ package se.chalmers.turtlebotmission.tests
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.stream.Collectors;
-import java.util.List;
 import com.google.inject.Inject
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.XtextRunner
@@ -47,15 +45,22 @@ class MissionDslParsingTest {
 
     @Test
     def void basicExample01() {
-        val content = loadFile("basic_example01.tbm")
+        val content = loadFile("examples/basic_example01.tbm")
         parseHelper.parse(content).assertNoErrors
     }
 
     def String loadFile(String path) {
         val currentDirectory = new File(new File(".").getAbsolutePath());
 
-        val content = String.join("\n",
-            Files.readAllLines(Paths.get(currentDirectory.getAbsolutePath(), "./examples/basic_example01.tbm")))
+        var p = Paths.get(currentDirectory.getAbsolutePath(), path)
+        for (String ps : newArrayList(".", "..", "../..")) {
+            val t = Paths.get(currentDirectory.getAbsolutePath(), ps, path)
+            if(Files.exists(t)) {
+                p = t
+            }
+        }
+
+        val content = String.join("\n", Files.readAllLines(p))
 
         return content
     }
