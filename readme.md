@@ -4,8 +4,27 @@ This is a small DSL for specifying TurtleBot Missions. Part of CourseWork.
 
 [![CircleCI](https://circleci.com/gh/lindwaltz/course_se17_robotdsl.svg?style=svg)](https://circleci.com/gh/lindwaltz/course_se17_robotdsl)
 
+Building and Running
+====================
+
+To build and run unit tests, just run
+
+```
+gradlew build
+```
+
+To start an interactive web-based editor, with live generation of output python code at http://localhost:8080 
+
+```
+gradlew jettyRun
+```
+
+![editor screenshot](/lindwaltz/course_se17_robotdsl/blob/master/examples/editor_preview.png?raw=true)
+
 IDE Installation
 ================
+
+Note: **strongly** recommend the use of IntelliJ over Eclipse.
 
 IntelliJ
 --------
@@ -14,6 +33,8 @@ IntelliJ
 - Configure |> Plugins |> Manage Repositories |> Add
   `http://download.eclipse.org/modeling/tmf/xtext/idea/2.9.2/updatePlugins.xml`
 - Tick all checkboxes (three) and update
+
+- Choose Open Project, navigate to where you checked out this project. Done!
 
 Eclipse Development
 -------------------
@@ -56,57 +77,20 @@ Eclipse Actions
 
 Project Layout
 ==============
-The two main projects to look at are `.turtlebotmission` and `.turtlebotmission.xtext`. The prior one contains the meta model definition (in a `.ecore` and its associated `.genmodel` file). These two files (???) lead to the generation of the POJO classes in `.turtlebotmission/src`. Futhermore, for this exercise, the given `.xtext` file (mentioned below) has been automatically generated from the meta model (*it will be your task to customize it*), see [3] for how it was generated.
-
-In `.turtlebotmission.xtext` the main file to look at is `TurtleBotMissionDSL.xtext` that defines the grammar for the language. You can ignore all `.xtend` files since these are not used in this project. The `.mwe2` file defines some settings for xtext, which you won't need to modify.
+The main project is `.turtlebotmission`, it contains the `.xtext` file and the automatically generated `.ecore` definition. (Note that I do not use a custom ecore).
 
 ```
 .turtlebotmission/
-  :: contains ecore model and generated java classes. Exports 'http://www.chalmers.se/turtlebotmission' package (turtlebotmission.TurtlebotmissionPackage)
+  :: contains xtext grammar definition, generated ecore model and generated java classes. Exports 'http://www.chalmers.se/turtlebotmission' package (turtlebotmission.TurtlebotmissionPackage)
 
-  model/
-    turtlebotmission.ecore                  Defined classes and relationships.
-    turtlebotmission.genmodel               Additional code generation options.
-    turtlebotmission.aird                   Visualization settings for class diagram.
-  
-  src/                                      Auto-Generated from the ecore/genmodel files.
-
-```
-
-See http://www.vogella.com/tutorials/EclipseEMF/article.html#meta-models-ecore-and-genmodel for a good explanation of `.ecore` and `.genmodel`.
-
-```
-.turtlebotmission/xtext
-  :: xtext grammar and generated parsing code. Imports and references '.turtlebotmission' AST.
-
-  src/
-    TurtleBotMissionDSL.xtext               Grammar definition
-```
-
-```
-.turtlebotmission.rosstarter/
-  :: Plugin for .TurtleBotMissionDSL editor - adds a button that can be pressed
-     to generate python code from the currently opened file.
-```
-
-```
-.turtlebotmission.xtext.ide/
+.turtlebotmission.ide/
   :: auto-generated IDE-integration code. Dont touch.
-```
 
-```
-.turtlebotmission.xtext.ui/
-  :: auto-generated code. Dont touch.
-```
+.turtlebotmission.idea/
+  :: auto-generated IDE-integration code. Dont touch.
 
-```
-.turtlebotmission.edit/
-  :: auto-generated editor code. Dont touch.
-```
-
-```
-.turtlebotmission.editor/
-  :: auto-generated editor code. Dont touch.
+.turtlebotmission.web/
+  :: partly generated/manual code for running the interactive web service. You shouldn't need to modify this.
 ```
 
 References
