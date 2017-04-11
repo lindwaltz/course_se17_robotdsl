@@ -1,6 +1,7 @@
-grammar se.chalmers.turtlebotmission with org.eclipse.xtext.common.Terminals
+grammar se.chalmers.turtlebotmission.MissionDsl with org.eclipse.xtext.common.Terminals hidden(WS, ML_COMMENT, SL_COMMENT)
 
 generate turtlebotmission "http://www.chalmers.se/turtlebotmission"
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 TurtleBot returns TurtleBot:
 	'TurtleBot'
