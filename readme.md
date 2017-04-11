@@ -92,6 +92,21 @@ The main project is `.turtlebotmission`, it contains the `.xtext` file and the a
   :: partly generated/manual code for running the interactive web service. You shouldn't need to modify this.
 ```
 
+Grammar
+-------
+The grammar at [turtlebotmission.xtext](https://github.com/lindwaltz/course_se17_robotdsl/blob/master/se.chalmers.turtlebotmission/src/main/java/se/chalmers/turtlebotmission.xtext) has mostly minor modifications from the grammar generated from the supplied `.ecore` definitions.
+
+First off, it uses `WS` to handle optional whitespace and `(SL|ML)_COMMENT` for comments. Other than that it allows the arbitrary ordering of TurtleBot-level statements by using `&` between groups.
+
+Code generation
+---------------
+The code generator uses Xtext `IGeneratorService` interface to generate code, making it callable from various contexts as intended by Xtext makers. In order to generate the python code, [Velocity Templates](http://velocity.apache.org/) and a template file [mission.py.vm](https://github.com/lindwaltz/course_se17_robotdsl/blob/master/se.chalmers.turtlebotmission/src/main/resources/templates/mission.py.vm)
+
+Examples
+--------
+
+See [examples/ folder](https://github.com/lindwaltz/course_se17_robotdsl/tree/master/examples) for DSL samples.
+
 References
 ==========
 
