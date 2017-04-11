@@ -1,0 +1,9 @@
+grammar se.chalmers.turtlebotmission with org.eclipse.xtext.common.Terminals
+
+generate turtlebotmission "http://www.chalmers.se/turtlebotmission"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

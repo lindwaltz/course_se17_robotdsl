@@ -1,0 +1,44 @@
+## Eclipse ignores
+.settings/
+.classpath
+.project
+
+## IDEA ignores
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/artifacts
+.idea/**/gradle.xml
+.idea/**/libraries
+.idea/xtextAutoBuilderState.xml
+
+.idea/dictionaries
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.xml
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+
+## Gradle
+.gradle
+
+## xText and Java ignores
+generated/
+src-gen/
+xtend-gen/
+xtext-gen/
+*.xml_gen
+
+## java ignores
+*.class
+bin/
+target/
+*.java._trace
+*.smap
+buildroot
+build/
+
+## Editor ignores
+*~
+*.orig

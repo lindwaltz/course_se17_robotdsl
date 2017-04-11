@@ -1,0 +1,4 @@
+include 'se.chalmers.turtlebotmission'
+include 'se.chalmers.turtlebotmission.ide'
+include 'se.chalmers.turtlebotmission.idea'
+include 'se.chalmers.turtlebotmission.web'
