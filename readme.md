@@ -120,6 +120,10 @@ Essential
 
 - [3] https://rtsys.informatik.uni-kiel.de/confluence/display/TUT/Xtext+1+-+Creating+a+Grammar+for+an+Existing+Metamodel
 
+- https://eclipse.org/Xtext/documentation/301_grammarlanguage.html
+
+- https://eclipse.org/xtend/documentation/203_xtend_expressions.html
+
 Periphery
 ---------
 - http://www.lorenzobettini.it/2014/04/switching-to-xcore-in-your-xtext-language/
@@ -130,6 +134,7 @@ Periphery
 
 - https://blogs.itemis.com/en/using-xtext-with-xcore-and-gradle
 
+- https://www.packtpub.com/books/content/testing-xtext-and-xtend
 
 Unused
 ------
