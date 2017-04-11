@@ -4,7 +4,8 @@
 .project
 
 ## IDEA ignores
-
+.idea/
+*.iml
 
 ## Gradle
 .gradle
