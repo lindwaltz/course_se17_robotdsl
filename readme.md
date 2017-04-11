@@ -40,12 +40,12 @@ Eclipse Development
 -------------------
 **WARNING!** Eclipse is an odd animal. Don't use it unless you are already used to it. Go with IntelliJ if you can, it functions like most other IDEs out there - so whatever you learn or already known will be a lot more available for reuse.
 
-#### Installing
+### Installing
 
-### Eclipse
+#### Eclipse
 * Download Eclipse Neon (64-bit) from https://www.eclipse.org/downloads/
 
-### Xtext
+#### Xtext
 
 - Follow the Xtext installation instructions on https://eclipse.org/Xtext/download.html (copied below for your convenience)
 
@@ -62,15 +62,14 @@ Eclipse Development
 
 ```
 
-### Eclipse Modeling Framework
+#### Eclipse Modeling Framework
 
 - Choose Help -> Install New Software... from the menu bar...
 - Use Pull-Down and Choose Neon repository
 - Search and add *EMF - Eclipse Modeling Framework SDK*
 - Search and add *Ecore Diagram Editor (SDK)*
 
-Eclipse Actions
----------------
+### Eclipse Actions
 - **Generate AST (metamodel) classes**: Open `turtlebotmission.genmodel`, right click and select `Generate All`
 
 - **Generate language code**: When editing `.xtext/TurtleBotMissionDSL.xtext` right click and `Run As -> Generate Xtext Artifacts`.
@@ -126,6 +125,8 @@ Periphery
 
 Unused
 ------
+(but saved for the future)
+
 - https://www.eclipsecon.org/france2015/sites/default/files/slides/presentation.pdf
 
 - http://stackoverflow.com/questions/36120699/generate-emf-model-via-gradle
