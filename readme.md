@@ -102,15 +102,27 @@ See http://www.vogella.com/tutorials/EclipseEMF/article.html#meta-models-ecore-a
 References
 ==========
 
+Essential
+---------
 - [1] http://www.cs.kun.nl/J.Hooman/DSL/Xtext_DSL_GettingStarted_Mars.pdf
 
 - [2] http://www.vogella.com/tutorials/EclipseEMF/article.html
 
 - [3] https://rtsys.informatik.uni-kiel.de/confluence/display/TUT/Xtext+1+-+Creating+a+Grammar+for+an+Existing+Metamodel
 
-- https://blogs.itemis.com/en/building-xtext-dsls-with-gradle
-- http://stackoverflow.com/questions/36120699/generate-emf-model-via-gradle
-- https://blogs.itemis.com/en/using-xtext-with-xcore-and-gradle
+Periphery
+---------
+- http://www.lorenzobettini.it/2014/04/switching-to-xcore-in-your-xtext-language/
 
 - http://www.lorenzobettini.it/2014/02/switching-from-an-inferred-ecore-model-to-an-imported-one-in-your-xtext-grammar/
-- http://www.lorenzobettini.it/2014/04/switching-to-xcore-in-your-xtext-language/
+
+- https://blogs.itemis.com/en/building-xtext-dsls-with-gradle
+
+- https://blogs.itemis.com/en/using-xtext-with-xcore-and-gradle
+
+
+Unused
+------
+- https://www.eclipsecon.org/france2015/sites/default/files/slides/presentation.pdf
+
+- http://stackoverflow.com/questions/36120699/generate-emf-model-via-gradle
