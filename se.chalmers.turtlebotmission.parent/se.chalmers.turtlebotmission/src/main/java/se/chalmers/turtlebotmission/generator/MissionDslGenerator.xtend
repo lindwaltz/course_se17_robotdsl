@@ -1,5 +1,5 @@
 /*
- * xtext - customized
+ * xtext gen. the original - now customized for TurtlebotMission!
  */
 package se.chalmers.turtlebotmission.generator
 

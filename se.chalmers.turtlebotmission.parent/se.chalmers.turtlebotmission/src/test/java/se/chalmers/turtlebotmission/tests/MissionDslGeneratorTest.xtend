@@ -15,38 +15,46 @@ import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 import se.chalmers.turtlebotmission.turtlebotmission.TurtleBot
+import org.eclipse.xtext.generator.IGenerator2
+import org.eclipse.xtext.generator.InMemoryFileSystemAccess
+
 
 @RunWith(XtextRunner)
 @InjectWith(MissionDslInjectorProvider)
-class MissionDslParsingTest {
-	@Inject
-	ParseHelper<TurtleBot> parseHelper
+class MissionDslGeneratorTest {
+	@Inject ParseHelper<TurtleBot> parseHelper
 
     @Inject extension ParseHelper<TurtleBot>
     @Inject extension ValidationTestHelper
+    @Inject IGenerator2 sut
 
     @Test
-	def void simpleEmptyModel() {
+	def void generateMinimal() {
 		val result = parseHelper.parse('''
 			TurtleBot test{}
 		''')
-        if (result === null) {
-            System.out.println("ERROR: ParseHelper failed to parse TurtleBot instance. Weird error?!")
-        }
-		Assert.assertNotNull(result)
+        result.assertNoErrors
 
-		System.out.println(result)
-		val noErrors = result.eResource().getErrors().isEmpty()
-		if (!noErrors) {
-			result.eResource().getErrors().forEach[el,idx | System.out.println(el)]
-		}
-		Assert.assertTrue(noErrors)
+        val fsa = new InMemoryFileSystemAccess()
+        sut.doGenerate(result.eResource, fsa, null)
+        //fsa.allFiles.forEach[el,idx | println(el)]
+        val output = fsa.allFiles.get("DEFAULT_OUTPUT/DEFAULT_ARTIFACT").toString()
+        //println(output)
+        Assert.assertTrue(output.contains("/usr/bin/env python"))
 	}
 
     @Test
-    def void basicExample01() {
+    def void generateBasicExample01() {
         val content = loadFile("examples/basic_example01.tbm")
-        parseHelper.parse(content).assertNoErrors
+        val result = parseHelper.parse(content)
+        result.assertNoErrors
+
+        val fsa = new InMemoryFileSystemAccess()
+        sut.doGenerate(result.eResource, fsa, null)
+        fsa.allFiles.forEach[el,idx | println(el)]
+        val output = fsa.allFiles.get("DEFAULT_OUTPUT/DEFAULT_ARTIFACT").toString()
+        println(output)
+        Assert.assertTrue(output.contains("/usr/bin/env python"))
     }
 
     def String loadFile(String path) {

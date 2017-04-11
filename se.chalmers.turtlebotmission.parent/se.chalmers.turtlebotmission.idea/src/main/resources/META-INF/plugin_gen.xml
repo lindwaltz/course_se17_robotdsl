@@ -1,0 +1,93 @@
+<idea-plugin version="2">
+	<extensions defaultExtensionNs="org.eclipse.xtext.idea">
+		<package
+			uri="http://www.chalmers.se/turtlebotmission"
+			class="se.chalmers.turtlebotmission.turtlebotmission.TurtlebotmissionPackage"
+		/>
+		<resourceFactory 
+			type="tbm"
+			class="org.eclipse.xtext.resource.IResourceFactory"
+			factoryClass="se.chalmers.turtlebotmission.idea.MissionDslExtensionFactory"
+		/>
+		<resourceServiceProvider
+			uriExtension="tbm"
+			class="org.eclipse.xtext.idea.resource.IResourceIdeaServiceProvider"
+			factoryClass="se.chalmers.turtlebotmission.idea.MissionDslExtensionFactory"
+		/>
+
+		<lang.setup
+			language="se.chalmers.turtlebotmission.MissionDsl"
+			implementationClass="se.chalmers.turtlebotmission.idea.MissionDslIdeaSetup"
+		/>
+	</extensions>
+
+	<extensions defaultExtensionNs="com.intellij">
+		<psi.treeChangePreprocessor implementation="se.chalmers.turtlebotmission.idea.lang.psi.MissionDslCodeBlockModificationListener"/>
+
+		<fileTypeFactory implementation="se.chalmers.turtlebotmission.idea.lang.MissionDslFileTypeFactory"/>
+		<stubElementTypeHolder class="se.chalmers.turtlebotmission.idea.lang.MissionDslElementTypeProvider"/>
+		<lang.ast.factory 
+			language="se.chalmers.turtlebotmission.MissionDsl"
+			factoryClass="se.chalmers.turtlebotmission.idea.MissionDslExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.lang.BaseXtextASTFactory"
+		/>
+		<lang.parserDefinition 
+			language="se.chalmers.turtlebotmission.MissionDsl"
+			factoryClass="se.chalmers.turtlebotmission.idea.MissionDslExtensionFactory"
+			implementationClass="se.chalmers.turtlebotmission.idea.lang.parser.MissionDslParserDefinition"
+		/>
+		<lang.findUsagesProvider 
+			language="se.chalmers.turtlebotmission.MissionDsl"
+			factoryClass="se.chalmers.turtlebotmission.idea.MissionDslExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.findusages.BaseXtextFindUsageProvider"
+		/>
+		<lang.refactoringSupport 
+			language="se.chalmers.turtlebotmission.MissionDsl"
+			factoryClass="se.chalmers.turtlebotmission.idea.MissionDslExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.refactoring.BaseXtextRefactoringSupportProvider"
+		/>
+		<lang.namesValidator 
+			language="se.chalmers.turtlebotmission.MissionDsl"
+			factoryClass="se.chalmers.turtlebotmission.idea.MissionDslExtensionFactory"
+			implementationClass="com.intellij.lang.refactoring.NamesValidator"
+		/>
+		<lang.syntaxHighlighterFactory key="se.chalmers.turtlebotmission.MissionDsl" implementationClass="se.chalmers.turtlebotmission.idea.highlighting.MissionDslSyntaxHighlighterFactory" />
+		<lang.braceMatcher 
+			language="se.chalmers.turtlebotmission.MissionDsl"
+			factoryClass="se.chalmers.turtlebotmission.idea.MissionDslExtensionFactory"
+			implementationClass="com.intellij.lang.PairedBraceMatcher"
+		/>
+		<annotator 
+			language="se.chalmers.turtlebotmission.MissionDsl"
+			factoryClass="se.chalmers.turtlebotmission.idea.MissionDslExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.annotation.IssueAnnotator"
+		/>
+		<completion.contributor language="se.chalmers.turtlebotmission.MissionDsl" implementationClass="se.chalmers.turtlebotmission.idea.completion.MissionDslCompletionContributor"/>
+		<pom.declarationSearcher implementation="se.chalmers.turtlebotmission.idea.lang.pom.MissionDslPomDeclarationSearcher"/>
+
+		<lang.psiStructureViewFactory 
+			language="se.chalmers.turtlebotmission.MissionDsl"
+			factoryClass="se.chalmers.turtlebotmission.idea.MissionDslExtensionFactory"
+			implementationClass="com.intellij.lang.PsiStructureViewFactory"
+		/>
+		<facetType implementation="se.chalmers.turtlebotmission.idea.facet.MissionDslFacetType"/>
+		<lang.documentationProvider 
+			language="se.chalmers.turtlebotmission.MissionDsl"
+			factoryClass="se.chalmers.turtlebotmission.idea.MissionDslExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.documentation.IdeaDocumentationProvider"
+		/>
+		<colorSettingsPage implementation="se.chalmers.turtlebotmission.idea.highlighting.MissionDslColorSettingsPage"/>
+		<highlightVisitor implementation="se.chalmers.turtlebotmission.idea.highlighting.MissionDslSemanticHighlightVisitor"/>
+
+		<lang.formatter 
+			language="se.chalmers.turtlebotmission.MissionDsl"
+			factoryClass="se.chalmers.turtlebotmission.idea.MissionDslExtensionFactory"
+			implementationClass="com.intellij.formatting.FormattingModelBuilder"
+		/>
+		<lang.commenter 
+			language="se.chalmers.turtlebotmission.MissionDsl"
+			factoryClass="se.chalmers.turtlebotmission.idea.MissionDslExtensionFactory"
+			implementationClass="com.intellij.lang.CodeDocumentationAwareCommenter"
+		/>
+	</extensions>
+</idea-plugin>
