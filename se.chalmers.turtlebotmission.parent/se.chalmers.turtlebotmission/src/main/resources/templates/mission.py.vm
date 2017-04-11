@@ -1,8 +1,14 @@
 #!/usr/bin/env python
+from math import pow,atan2,sqrt
+
+import itertools
+import numpy as np
+from scipy.spatial import distance
+
 import rospy
 from geometry_msgs.msg  import Twist
 from turtlesim.msg import Pose
-from math import pow,atan2,sqrt
+
 
 MISSION_STEPS = []
 #foreach( $step in $steps )
@@ -60,19 +66,35 @@ class turtle():
         vel_msg.angular.z =0
         self.velocity_publisher.publish(vel_msg)
 
+def parse_steps(steps):
+    coords = []
+    for i, step in enumerate(steps):        
+        if step[0] == "goto_line":
+            coords.extend(step[1])
+        else:
+            coords.extend(shortest_path(step[1], coords[-1]))
+    # remove dupes and return
+    return [x[0] for x in itertools.groupby(coords)]
+
+def shortest_path(points, start=None):
+    """nearest neighbour heuristic"""
+    if start is None:
+        start = points[0]
+    must_visit = points
+    path = [start]
+    must_visit.remove(start)
+    while must_visit:
+        nearest = min(must_visit, key=lambda x: distance.euclidean(path[-1], x))
+        path.append(nearest)
+        must_visit.remove(nearest)
+    return path
+
 if __name__ == '__main__':
     try:
         #Testing our function
-        #creating a turtle object        
-        tb = turtle()
-
-        #list of coordinates to visit
-        #This can is the only thing to change in the model to text
-        coordinate_list = COORDINATE_LIST
-  
-        #making the the turtle follow the coordinates in sequence 
-        for coordinate in coordinate_list:
-            x,y = coordinate
+        tb = turtle()        
+        coordinate_list = parse_steps(MISSION_STEPS)
+        for x,y in coordinate_list:
             tb.move2goal(x,y)
 
     except rospy.ROSInterruptException:

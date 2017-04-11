@@ -138,6 +138,8 @@ Periphery
 
 - https://github.com/eclipse/xtext-web/blob/master/org.eclipse.xtext.web.example.jetty/src/main/webapp/ace-statemachine-resource.html
 
+- http://codereview.stackexchange.com/questions/81865/travelling-salesman-using-brute-force-and-heuristics
+
 Unused
 ------
 - https://www.eclipsecon.org/france2015/sites/default/files/slides/presentation.pdf
