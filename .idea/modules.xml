@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/course_se17_robotdsl.iml" filepath="$PROJECT_DIR$/.idea/modules/course_se17_robotdsl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission/course_se17_robotdsl-se.chalmers.turtlebotmission.iml" filepath="$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission/course_se17_robotdsl-se.chalmers.turtlebotmission.iml" group="se.chalmers.turtlebotmission" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.idea/course_se17_robotdsl-se.chalmers.turtlebotmission.idea_main.iml" filepath="$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.idea/course_se17_robotdsl-se.chalmers.turtlebotmission.idea_main.iml" group="se.chalmers.turtlebotmission.idea" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.idea/course_se17_robotdsl-se.chalmers.turtlebotmission.idea_test.iml" filepath="$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.idea/course_se17_robotdsl-se.chalmers.turtlebotmission.idea_test.iml" group="se.chalmers.turtlebotmission.idea" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.web/course_se17_robotdsl-se.chalmers.turtlebotmission.web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.web/course_se17_robotdsl-se.chalmers.turtlebotmission.web_main.iml" group="se.chalmers.turtlebotmission.web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.web/course_se17_robotdsl-se.chalmers.turtlebotmission.web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.web/course_se17_robotdsl-se.chalmers.turtlebotmission.web_test.iml" group="se.chalmers.turtlebotmission.web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission/course_se17_robotdsl-se.chalmers.turtlebotmission_main.iml" filepath="$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission/course_se17_robotdsl-se.chalmers.turtlebotmission_main.iml" group="se.chalmers.turtlebotmission" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission/course_se17_robotdsl-se.chalmers.turtlebotmission_test.iml" filepath="$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission/course_se17_robotdsl-se.chalmers.turtlebotmission_test.iml" group="se.chalmers.turtlebotmission" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.ide/se.chalmers.turtlebotmission.ide.iml" filepath="$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.ide/se.chalmers.turtlebotmission.ide.iml" group="se.chalmers.turtlebotmission.ide" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.ide/se.chalmers.turtlebotmission.ide_main.iml" filepath="$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.ide/se.chalmers.turtlebotmission.ide_main.iml" group="se.chalmers.turtlebotmission.ide" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.ide/se.chalmers.turtlebotmission.ide_test.iml" filepath="$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.ide/se.chalmers.turtlebotmission.ide_test.iml" group="se.chalmers.turtlebotmission.ide" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.idea/se.chalmers.turtlebotmission.idea.iml" filepath="$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.idea/se.chalmers.turtlebotmission.idea.iml" group="se.chalmers.turtlebotmission.idea" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.web/se.chalmers.turtlebotmission.web.iml" filepath="$PROJECT_DIR$/.idea/modules/se.chalmers.turtlebotmission.web/se.chalmers.turtlebotmission.web.iml" group="se.chalmers.turtlebotmission.web" />
+    </modules>
+  </component>
+</project>

@@ -43,7 +43,7 @@ class MissionDslGeneratorTest {
         Assert.assertTrue(output.contains("/usr/bin/env python"))
 	}
 
-    //@Test
+    @Test
     def void generateBasicExample01() {
         val content = loadFile("examples/example.tbm")
         val result = parseHelper.parse(content)

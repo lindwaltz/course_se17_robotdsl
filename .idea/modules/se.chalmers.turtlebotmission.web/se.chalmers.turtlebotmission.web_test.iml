@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":se.chalmers.turtlebotmission.web:test" external.linked.project.path="$MODULE_DIR$/../../../se.chalmers.turtlebotmission.parent/se.chalmers.turtlebotmission.web" external.root.project.path="$MODULE_DIR$/../../../se.chalmers.turtlebotmission.parent" external.system.id="GRADLE" external.system.module.group="se.chalmers.turtlebotmission" external.system.module.type="sourceSet" external.system.module.version="1.0.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output-test url="file://$MODULE_DIR$/../../../se.chalmers.turtlebotmission.parent/se.chalmers.turtlebotmission.web/build/classes/test" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../se.chalmers.turtlebotmission.parent/se.chalmers.turtlebotmission.web/src/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../../se.chalmers.turtlebotmission.parent/se.chalmers.turtlebotmission.web/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../se.chalmers.turtlebotmission.parent/se.chalmers.turtlebotmission.web/src/test/xtend-gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../se.chalmers.turtlebotmission.parent/se.chalmers.turtlebotmission.web/src/test/xtext-gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../se.chalmers.turtlebotmission.parent/se.chalmers.turtlebotmission.web/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../se.chalmers.turtlebotmission.parent/se.chalmers.turtlebotmission.web/src/test/xtext-gen" type="java-test-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="se.chalmers.turtlebotmission.web_main" />
+    <orderEntry type="module" module-name="se.chalmers.turtlebotmission_main" />
+    <orderEntry type="module" module-name="se.chalmers.turtlebotmission.ide_main" />
+    <orderEntry type="library" name="Gradle: org.eclipse.xtext:org.eclipse.xtext.xbase.web:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.xtext:org.eclipse.xtext.web.servlet:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.xtend:org.eclipse.xtend.lib:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.webjars:requirejs:2.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.webjars:requirejs-text:2.0.15" level="project" />
+    <orderEntry type="library" name="Gradle: org.webjars:jquery:2.2.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.webjars:ace:1.2.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-annotations:9.3.8.v20160314" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-simple:1.7.21" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.xtext:org.eclipse.xtext:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.xtext:org.eclipse.xtext.xbase:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.velocity:velocity:1.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.xtext:org.eclipse.xtext.ide:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.xtext:org.eclipse.xtext.xbase.ide:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.xtext:org.eclipse.xtext.web:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.xtend:org.eclipse.xtend.lib.macro:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-plus:9.3.8.v20160314" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-webapp:9.3.8.v20160314" level="project" />
+    <orderEntry type="library" name="Gradle: javax.annotation:javax.annotation-api:1.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.ow2.asm:asm:5.0.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.ow2.asm:asm-commons:5.0.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.21" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.xtext:org.eclipse.xtext.util:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: log4j:log4j:1.2.16" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.platform:org.eclipse.equinox.common:3.8.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.platform:org.eclipse.osgi:3.11.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.emf:org.eclipse.emf.common:2.12.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.emf:org.eclipse.emf.ecore.xmi:2.12.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.inject:guice:3.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.antlr:antlr-runtime:3.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.xtext:org.eclipse.xtext.common.types:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: commons-collections:commons-collections:3.2.1" level="project" />
+    <orderEntry type="library" name="Gradle: commons-lang:commons-lang:2.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.lsp4j:org.eclipse.lsp4j:0.1.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.guava:guava:18.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-jndi:9.3.8.v20160314" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-xml:9.3.8.v20160314" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-servlet:9.3.8.v20160314" level="project" />
+    <orderEntry type="library" name="Gradle: org.ow2.asm:asm-tree:5.0.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.emf:org.eclipse.emf.ecore:2.12.0" level="project" />
+    <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1" level="project" />
+    <orderEntry type="library" name="Gradle: aopalliance:aopalliance:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.lsp4j:org.eclipse.lsp4j.generator:0.1.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.lsp4j:org.eclipse.lsp4j.jsonrpc:0.1.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-util:9.3.8.v20160314" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-security:9.3.8.v20160314" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-server:9.3.8.v20160314" level="project" />
+    <orderEntry type="library" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-http:9.3.8.v20160314" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-io:9.3.8.v20160314" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.7" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="se.chalmers.turtlebotmission.web_main" />
+</module>
