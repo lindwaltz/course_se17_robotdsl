@@ -43,9 +43,9 @@ class MissionDslParsingTest {
 		Assert.assertTrue(noErrors)
 	}
 
-    @Test
+    //@Test
     def void basicExample01() {
-        val content = loadFile("examples/basic_example01.tbm")
+        val content = loadFile("examples/example.tbm")
         parseHelper.parse(content).assertNoErrors
     }
 
