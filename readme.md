@@ -100,7 +100,7 @@ First off, it uses `WS` to handle optional whitespace and `(SL|ML)_COMMENT` for 
 
 Code generation
 ---------------
-The code generator uses Xtext `IGeneratorService` interface to generate code, making it callable from various contexts as intended by Xtext makers. In order to generate the python code, [Velocity Templates](http://velocity.apache.org/) and a template file [mission.py.vm](https://github.com/lindwaltz/course_se17_robotdsl/blob/master/se.chalmers.turtlebotmission/src/main/resources/templates/mission.py.vm)
+The [code generator](https://github.com/lindwaltz/course_se17_robotdsl/blob/master/se.chalmers.turtlebotmission/src/main/java/se/chalmers/turtlebotmission/generator/MissionDslGenerator.xtend) uses Xtext `IGeneratorService` interface to generate code, making it callable from various contexts as intended by Xtext makers. In order to generate the python code, [Velocity Templates](http://velocity.apache.org/) and a template file [mission.py.vm](https://github.com/lindwaltz/course_se17_robotdsl/blob/master/se.chalmers.turtlebotmission/src/main/resources/templates/mission.py.vm)
 
 Examples
 --------
