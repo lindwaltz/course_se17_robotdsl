@@ -1,3 +1,9 @@
+About
+=====
+This is a small DSL for specifying TurtleBot Missions. Part of CourseWork.
+
+[![CircleCI](https://circleci.com/gh/lindwaltz/course_se17_robotdsl.svg?style=svg)](https://circleci.com/gh/lindwaltz/course_se17_robotdsl)
+
 IDE Installation
 ================
 
