@@ -11,9 +11,6 @@ machine:
 #  cache_directories:
 #    - ~/.gradle
 
-general:
-  build_dir: se.chalmers.turtlebotmission.parent
-
 test:
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
