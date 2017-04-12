@@ -10,13 +10,13 @@ Building and Running
 To build and run unit tests, just run
 
 ```
-gradlew build
+./gradlew build
 ```
 
 To start an interactive web-based editor, with live generation of output python code at http://localhost:8080 
 
 ```
-gradlew jettyRun
+./gradlew jettyRun
 ```
 
 ![editor screenshot](https://raw.githubusercontent.com/lindwaltz/course_se17_robotdsl/master/examples/editor_preview.png)
