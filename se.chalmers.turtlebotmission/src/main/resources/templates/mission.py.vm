@@ -46,18 +46,20 @@ class turtle():
         goal_pose.y = posY
         distance_tolerance = self.tolerance
         vel_msg = Twist()
+        angErrorLast = 0.0
         while sqrt(pow((goal_pose.x - self.pose.x), 2) + pow((goal_pose.y - self.pose.y), 2)) >= distance_tolerance:
-            #Porportional Controller
+            #Proportional Controller
             #linear velocity in the x-axis:
-            vel_msg.linear.x = 1.5 * sqrt(pow((goal_pose.x - self.pose.x), 2) + pow((goal_pose.y - self.pose.y), 2))
+            vel_msg.linear.x = 1.0 * sqrt(pow((goal_pose.x - self.pose.x), 2) + pow((goal_pose.y - self.pose.y), 2))
             vel_msg.linear.y = 0
             vel_msg.linear.z = 0
 
             #angular velocity in the z-axis:
+            angError = atan2(goal_pose.y - self.pose.y, goal_pose.x - self.pose.x) - self.pose.theta
             vel_msg.angular.x = 0
             vel_msg.angular.y = 0
-            vel_msg.angular.z = 4 * (atan2(goal_pose.y - self.pose.y, goal_pose.x - self.pose.x) - self.pose.theta)
-
+            vel_msg.angular.z = 4.0 * angError - 2.0 *(angError - angErrorLast)
+            angErrorLast = angError
             #Publishing our vel_msg
             self.velocity_publisher.publish(vel_msg)
             self.rate.sleep()
